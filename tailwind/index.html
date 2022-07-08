@@ -24,19 +24,50 @@
 
         buttonWrapper: {
             attributes: {
-                class: 'flex flex-row-reverse justify-end',
+                class: [
+                    'flex justify-start -mx-2',
+                    "{{ buttonsPosition == 'right' ? 'justify-end' }}",
+                    "{{ buttonsPosition == 'center' ? 'justify-center' }}",
+                    "{{ buttonsPosition == 'left-right' ? 'justify-between' }}",
+                    "{{ buttonsPosition == 'right-save-left' ? 'justify-start flex-row-reverse' }}",
+                    "{{ buttonsPosition == 'center-save-left' ? 'justify-center flex-row-reverse' }}",
+                    "{{ buttonsPosition == 'center-save-right' ? 'justify-center' }}",
+                    "{{ buttonsPosition == 'save-right' ? 'justify-between' }}",
+                    "{{ buttonsPosition == 'save-left' ? 'justify-between flex-row-reverse' }}",
+                ],
+            },
+        },
+
+        buttonContainer: {
+            attributes: {
+                class: 'flex justify-start',
+            },
+        },
+
+        saveButton: {
+            attributes: {
+                class: [
+                    'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-600 hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                    'mx-2',
+                ],
             },
         },
 
         previousButton: {
             attributes: {
-                class: 'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 mr-2',
+                class: [
+                    'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
+                    'mx-2',
+                ],
             },
         },
 
         submitButton: {
             attributes: {
-                class: 'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                class: [
+                    'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                    'mx-2 order-10',
+                ],
             },
         },
 
