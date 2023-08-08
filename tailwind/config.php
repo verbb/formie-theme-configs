@@ -262,7 +262,7 @@ return [
                 'resetClass' => true,
 
                 'attributes' => [
-                    class => 'hidden',
+                    'class' => 'hidden',
                 ],
             ],
         ],
