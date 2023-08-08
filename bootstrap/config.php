@@ -65,7 +65,7 @@ return [
         'page' => [
             'attributes' => [
                 'class' => [
-                    "{{ form.hasMultiplePages() and page.id != currentPage.id ? 'd-none'  => false }}",
+                    "{{ form.hasMultiplePages() and page.id != currentPage.id ? 'd-none' : false }}",
                 ],
             ],
         ],
@@ -86,8 +86,8 @@ return [
             'attributes' => [
                 'class' => [
                     'nav-link',
-                    "{{ (page.id == currentPage.id) ? 'active'  => false }}",
-                    "{{ page.getFieldErrors(submission) ? 'text-danger'  => false }}",
+                    "{{ (page.id == currentPage.id) ? 'active' : false }}",
+                    "{{ page.getFieldErrors(submission) ? 'text-danger' : false }}",
                 ],
             ],
         ],
@@ -290,7 +290,7 @@ return [
             'field' => [
                 'attributes' => [
                     'class' => [
-                        "{{ field.getIsHidden() ? 'd-none'  => false }}",
+                        "{{ field.getIsHidden() ? 'd-none' : false }}",
                     ],
                 ],
             ],
