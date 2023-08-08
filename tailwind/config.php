@@ -74,7 +74,7 @@ return [
         'page' => [
             'attributes' => [
                 'class' => [
-                    "{{ form.hasMultiplePages() and page.id != currentPage.id ? 'hidden'  => false }}",
+                    "{{ form.hasMultiplePages() and page.id != currentPage.id ? 'hidden' : false }}",
                 ],
             ],
         ],
@@ -95,8 +95,8 @@ return [
             'attributes' => [
                 'class' => [
                     'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm',
-                    "{{ (page.id == currentPage.id) ? 'border-indigo-500 text-indigo-600'  => 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}",
-                    "{{ page.getFieldErrors(submission) ? 'text-red-500'  => false }}",
+                    "{{ (page.id == currentPage.id) ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}",
+                    "{{ page.getFieldErrors(submission) ? 'text-red-500' : false }}",
                 ],
             ],
         ],
@@ -293,7 +293,7 @@ return [
             'field' => [
                 'attributes' => [
                     'class' => [
-                        "{{ field.getIsHidden() ? 'hidden'  => false }}",
+                        "{{ field.getIsHidden() ? 'hidden' : false }}",
                     ],
                 ],
             ],
