@@ -228,7 +228,9 @@ return [
         'checkboxes' => [
             'fieldOption' => [
                 'attributes' => [
-                    'class' => 'flex items-start mb-2',
+                    'class' => [
+                        "{{ field.layout == 'horizontal' ? 'inline-block mr-4' : 'flex items-start mb-2' }}",
+                    ],
                 ],
             ],
 
@@ -270,7 +272,9 @@ return [
         'radioButtons' => [
             'fieldOption' => [
                 'attributes' => [
-                    'class' => 'flex items-start mb-2',
+                    'class' => [
+                        "{{ field.layout == 'horizontal' ? 'inline-block mr-4' : 'flex items-start mb-2' }}",
+                    ],
                 ],
             ],
 

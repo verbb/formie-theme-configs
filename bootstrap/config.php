@@ -225,7 +225,10 @@ return [
         'checkboxes' => [
             'fieldOption' => [
                 'attributes' => [
-                    'class' => 'form-check',
+                    'class' => [
+                        'form-check',
+                        "{{ field.layout == 'horizontal' ? 'form-check-inline' : '' }}",
+                    ],
                 ],
             ],
 
@@ -267,7 +270,10 @@ return [
         'radioButtons' => [
             'fieldOption' => [
                 'attributes' => [
-                    'class' => 'form-check',
+                    'class' => [
+                        'form-check',
+                        "{{ field.layout == 'horizontal' ? 'form-check-inline' : '' }}",
+                    ],
                 ],
             ],
 
