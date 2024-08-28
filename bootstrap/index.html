@@ -132,7 +132,7 @@
             attributes: {
                 class: [
                     'row gx-3 mb-3',
-                    "{{ not craft.formie.getVisibleFields(row) ? ' d-none' }}",
+                    "{{ row.getIsHidden() ? ' d-none' }}",
                 ],
             },
         },
