@@ -203,6 +203,12 @@ return [
             ],
         ],
 
+        'fieldRichText' => [
+            'attributes' => [
+                'class' => 'relative',
+            ],
+        ],
+
         'agree' => [
             'fieldOption' => [
                 'attributes' => [
