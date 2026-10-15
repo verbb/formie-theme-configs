@@ -67,7 +67,7 @@ return [
         'saveButton' => [
             'attributes' => [
                 'class' => [
-                    'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-600 hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                    'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-600 hover:underline focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
                     'mx-2',
                 ],
             ],
@@ -76,7 +76,7 @@ return [
         'backButton' => [
             'attributes' => [
                 'class' => [
-                    'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
+                    'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
                     'mx-2',
                 ],
             ],
@@ -85,7 +85,7 @@ return [
         'submitButton' => [
             'attributes' => [
                 'class' => [
-                    'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                    'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-xs text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
                     'mx-2 order-10',
                 ],
             ],
@@ -99,7 +99,7 @@ return [
 
         'pageTabs' => [
             'attributes' => [
-                'class' => 'border-b border-gray-200 -mb-px flex space-x-8 mb-6',
+                'class' => 'border-b border-gray-200 -mb-px flex gap-8 mb-6',
             ],
         ],
 
@@ -159,7 +159,7 @@ return [
 
         'nestedFieldRows' => [
             'attributes' => [
-                'class' => 'border py-4',
+                'class' => 'border border-gray-200 py-4',
             ],
         ],
 
@@ -213,7 +213,7 @@ return [
 
         'fieldInput' => [
             'attributes' => [
-                'class' => 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md',
+                'class' => 'shadow-xs focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md',
             ],
         ],
 
@@ -231,13 +231,13 @@ return [
 
         'fieldAddButton' => [
             'attributes' => [
-                'class' => 'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
+                'class' => 'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
             ],
         ],
 
         'fieldRemoveButton' => [
             'attributes' => [
-                'class' => 'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
+                'class' => 'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
             ],
         ],
 
@@ -270,7 +270,7 @@ return [
                 'resetClass' => true,
 
                 'attributes' => [
-                    'class' => 'focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded',
+                    'class' => 'focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded-sm',
                 ],
             ],
         ],
@@ -298,7 +298,7 @@ return [
                 'resetClass' => true,
 
                 'attributes' => [
-                    'class' => 'focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded',
+                    'class' => 'focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded-sm',
                 ],
             ],
         ],
@@ -308,7 +308,7 @@ return [
                 'resetClass' => true,
 
                 'attributes' => [
-                    'class' => 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md',
+                    'class' => 'shadow-xs focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md',
                 ],
             ],
         ],
@@ -389,7 +389,7 @@ return [
 
             'fieldRemoveButton' => [
                 'attributes' => [
-                    'class' => 'absolute top-0 right-0 m-1 inline-flex items-center px-2 py-1.5 border border-transparent text-xs font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
+                    'class' => 'absolute top-0 right-0 m-1 inline-flex items-center px-2 py-1.5 border border-transparent text-xs font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
                 ],
             ],
         ],
@@ -397,13 +397,13 @@ return [
         'signature' => [
             'fieldCanvas' => [
                 'attributes' => [
-                    'class' => 'w-full h-[8rem] border bg-slate-100',
+                    'class' => 'w-full h-[8rem] border border-gray-200 bg-slate-100',
                 ],
             ],
 
             'fieldRemoveButton' => [
                 'attributes' => [
-                    'class' => 'absolute top-0 right-0 m-1 inline-flex items-center px-2 py-1 border border-slate-300 text-xs font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
+                    'class' => 'absolute top-0 right-0 m-1 inline-flex items-center px-2 py-1 border border-slate-300 text-xs font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
                 ],
             ],
         ],

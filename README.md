@@ -4,12 +4,19 @@ This is a collection of [theme config](https://verbb.io/craft-plugins/formie/doc
 
 These are drop-in-ready configuration objects to make your forms look great for the following frameworks:
 
-- [Tailwind v3](https://tailwindcss.com/)
+- [Tailwind v4](https://tailwindcss.com/)
 - [Bootstrap v5](https://getbootstrap.com/)
 
 ## Usage
 
 All documentation on usage is covered in the [Formie docs](https://verbb.io/craft-plugins/formie/docs/v4/theming/theme-config).
+
+The Tailwind example uses the [Play CDN](https://tailwindcss.com/docs/installation/play-cdn) for local previews. For production, compile Tailwind and include the [official forms plugin](https://github.com/tailwindlabs/tailwindcss-forms):
+
+```css
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+```
 
 <h2></h2>
 
