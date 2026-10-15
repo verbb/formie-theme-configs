@@ -10,30 +10,50 @@ return [
             ],
         ],
 
-        'alertError' => [
+        'messageError' => [
             'attributes' => [
                 'class' => 'alert alert-danger',
             ],
         ],
 
-        'alertSuccess' => [
+        'messageSuccess' => [
             'attributes' => [
                 'class' => 'alert alert-success',
             ],
         ],
 
-        'buttonWrapper' => [
+        'pageButtons' => [
             'attributes' => [
                 'class' => [
-                    'd-flex justify-content-start mx-n2',
-                    "{{ buttonsPosition == 'right' ? 'justify-content-end' }}",
-                    "{{ buttonsPosition == 'center' ? 'justify-content-center' }}",
-                    "{{ buttonsPosition == 'left-right' ? 'justify-content-between' }}",
-                    "{{ buttonsPosition == 'right-save-left' ? 'justify-content-start flex-row-reverse' }}",
-                    "{{ buttonsPosition == 'center-save-left' ? 'justify-content-center flex-row-reverse' }}",
-                    "{{ buttonsPosition == 'center-save-right' ? 'justify-content-center' }}",
-                    "{{ buttonsPosition == 'save-right' ? 'justify-content-between' }}",
-                    "{{ buttonsPosition == 'save-left' ? 'justify-content-between flex-row-reverse' }}",
+                    'd-flex mx-n2',
+                    [
+                        'if' => ['context' => 'page.buttonsPosition', 'equals' => 'left'],
+                        'then' => 'justify-content-start',
+                    ],
+                    [
+                        'if' => ['context' => 'page.buttonsPosition', 'equals' => 'right'],
+                        'then' => 'justify-content-end',
+                    ],
+                    [
+                        'if' => ['context' => 'page.buttonsPosition', 'in' => ['center', 'center-save-right']],
+                        'then' => 'justify-content-center',
+                    ],
+                    [
+                        'if' => ['context' => 'page.buttonsPosition', 'in' => ['left-right', 'save-right']],
+                        'then' => 'justify-content-between',
+                    ],
+                    [
+                        'if' => ['context' => 'page.buttonsPosition', 'equals' => 'right-save-left'],
+                        'then' => 'justify-content-start flex-row-reverse',
+                    ],
+                    [
+                        'if' => ['context' => 'page.buttonsPosition', 'equals' => 'center-save-left'],
+                        'then' => 'justify-content-center flex-row-reverse',
+                    ],
+                    [
+                        'if' => ['context' => 'page.buttonsPosition', 'equals' => 'save-left'],
+                        'then' => 'justify-content-between flex-row-reverse',
+                    ],
                 ],
             ],
         ],
@@ -62,11 +82,9 @@ return [
             ],
         ],
 
-        'page' => [
+        'pageHidden' => [
             'attributes' => [
-                'class' => [
-                    "{{ form.hasMultiplePages() and page.id != currentPage.id ? 'd-none' : false }}",
-                ],
+                'class' => 'd-none',
             ],
         ],
 
@@ -84,11 +102,19 @@ return [
 
         'pageTabLink' => [
             'attributes' => [
-                'class' => [
-                    'nav-link',
-                    "{{ (page.id == currentPage.id) ? 'active' : false }}",
-                    "{{ page.getFieldErrors(submission) ? 'text-danger' : false }}",
-                ],
+                'class' => 'nav-link',
+            ],
+        ],
+
+        'tabLinkCurrent' => [
+            'attributes' => [
+                'class' => 'active',
+            ],
+        ],
+
+        'tabError' => [
+            'attributes' => [
+                'class' => 'text-danger',
             ],
         ],
 
@@ -130,10 +156,13 @@ return [
 
         'row' => [
             'attributes' => [
-                'class' => [
-                    'row gx-3 mb-3',
-                    "{{ row.getIsHidden() ? ' d-none' }}",
-                ],
+                'class' => 'row gx-3 mb-3',
+            ],
+        ],
+
+        'rowHidden' => [
+            'attributes' => [
+                'class' => 'd-none',
             ],
         ],
 
@@ -163,10 +192,19 @@ return [
 
         'fieldInput' => [
             'attributes' => [
-                'class' => [
-                    'form-control',
-                    "{{ (submission.getErrors(field.handle) ?? null) ? 'border-danger' }}",
-                ],
+                'class' => 'form-control',
+            ],
+        ],
+
+        'fieldControlError' => [
+            'attributes' => [
+                'class' => 'border-danger',
+            ],
+        ],
+
+        'conditionalHidden' => [
+            'attributes' => [
+                'class' => 'd-none',
             ],
         ],
 
@@ -233,7 +271,10 @@ return [
                 'attributes' => [
                     'class' => [
                         'form-check',
-                        "{{ field.layout == 'horizontal' ? 'form-check-inline' : '' }}",
+                        [
+                            'if' => ['context' => 'field.layout', 'equals' => 'horizontal'],
+                            'then' => 'form-check-inline',
+                        ],
                     ],
                 ],
             ],
@@ -278,7 +319,10 @@ return [
                 'attributes' => [
                     'class' => [
                         'form-check',
-                        "{{ field.layout == 'horizontal' ? 'form-check-inline' : '' }}",
+                        [
+                            'if' => ['context' => 'field.layout', 'equals' => 'horizontal'],
+                            'then' => 'form-check-inline',
+                        ],
                     ],
                 ],
             ],
@@ -302,7 +346,10 @@ return [
             'field' => [
                 'attributes' => [
                     'class' => [
-                        "{{ field.getIsHidden() ? 'd-none' : false }}",
+                        [
+                            'if' => 'field.isHidden',
+                            'then' => 'd-none',
+                        ],
                     ],
                 ],
             ],
@@ -323,16 +370,10 @@ return [
         ],
 
         'signature' => [
-            'fieldInputContainer' => [
-                'attributes' => [
-                    'class' => 'position-relative',
-                ],
-            ],
-
             'fieldCanvas' => [
                 'attributes' => [
                     'class' => 'w-100 border',
-                    'style' => 'background-color => #e9ecef;',
+                    'style' => 'background-color: #e9ecef;',
                 ],
             ],
 
